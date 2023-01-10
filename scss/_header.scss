@@ -230,6 +230,11 @@
     height: 60px;
     width: auto;
   }
+  &.active .side-overlay {
+    visibility: visible;
+    opacity: 1;
+    z-index: 999;
+  }
 }
 .side-overlay {
   position: fixed;
@@ -243,12 +248,9 @@
   visibility: hidden;
   transition: all 0.2s ease;
   will-change: opacity;
-
-  &.active-overlay {
-    visibility: visible;
-    opacity: 1;
-    z-index: 999;
-  }
+}
+.nav-mb__left.active .nav-box-mb {
+  left: 0;
 }
 .nav-box-mb {
   position: fixed;
@@ -262,11 +264,8 @@
   background: #386426;
   color: #fff;
   transition: all 0.2s linear;
-  left: -100%;
+  left: -240px;
 
-  &.active {
-    left: 0;
-  }
   & .search-box {
     padding: 15px 10px;
     margin-bottom: 20px;
@@ -322,6 +321,9 @@
     display: block;
   }
 }
+.nav-mb__right.active .newstop-box-mb {
+  right: 0;
+}
 .newstop-box-mb {
   position: fixed;
   width: 240px;
@@ -335,10 +337,6 @@
   background: #386426;
   color: #fff;
   transition: all 0.2s linear;
-
-  &.active {
-    right: 0;
-  }
 
   & .newstop-title {
     background-color: #000;

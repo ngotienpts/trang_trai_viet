@@ -1040,7 +1040,7 @@ img {
   padding-right: 30px;
 }
 .navbar-nav > li.drop-arrow > a:after {
-  content: "\f078";
+  content: "";
   position: absolute;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
@@ -1161,6 +1161,11 @@ img {
   height: 60px;
   width: auto;
 }
+.nav-mb.active .side-overlay {
+  visibility: visible;
+  opacity: 1;
+  z-index: 999;
+}
 
 .side-overlay {
   position: fixed;
@@ -1175,10 +1180,9 @@ img {
   transition: all 0.2s ease;
   will-change: opacity;
 }
-.side-overlay.active-overlay {
-  visibility: visible;
-  opacity: 1;
-  z-index: 999;
+
+.nav-mb__left.active .nav-box-mb {
+  left: 0;
 }
 
 .nav-box-mb {
@@ -1193,10 +1197,7 @@ img {
   background: #386426;
   color: #fff;
   transition: all 0.2s linear;
-  left: -100%;
-}
-.nav-box-mb.active {
-  left: 0;
+  left: -240px;
 }
 .nav-box-mb .search-box {
   padding: 15px 10px;
@@ -1250,6 +1251,10 @@ img {
   display: block;
 }
 
+.nav-mb__right.active .newstop-box-mb {
+  right: 0;
+}
+
 .newstop-box-mb {
   position: fixed;
   width: 240px;
@@ -1263,9 +1268,6 @@ img {
   background: #386426;
   color: #fff;
   transition: all 0.2s linear;
-}
-.newstop-box-mb.active {
-  right: 0;
 }
 .newstop-box-mb .newstop-title {
   background-color: #000;

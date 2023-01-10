@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var fancyboxes = document.querySelectorAll(".fancybox-full");
 
   // show sub menu mb
-  var navMbWrapper = document.querySelector(".nav-mb-wrapper");
+  var navMb = document.querySelector(".nav-mb");
 
   // end show sub menu mb
 
@@ -27,13 +27,13 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       // sub menu mb
-      if (navMbWrapper) {
-        var navSubs = navMbWrapper.querySelectorAll(".nav-item__heading");
-        var navLeft = navMbWrapper.querySelector(".nav-mb__left");
-        var navRight = navMbWrapper.querySelector(".nav-mb__right");
-        var overlay = navMbWrapper.querySelector(".side-overlay");
-        var navBox = navMbWrapper.querySelector(".nav-box-mb");
-        var navNew = navMbWrapper.querySelector(".newstop-box-mb");
+      if (navMb) {
+        var navSubs = navMb.querySelectorAll(".nav-item__heading");
+        var navLeft = navMb.querySelector(".nav-mb__left");
+        var navRight = navMb.querySelector(".nav-mb__right");
+        var overlay = navMb.querySelector(".side-overlay");
+        // var navBox = navMb.querySelector(".nav-box-mb");
+        // var navNew = navMb.querySelector(".newstop-box-mb");
 
         navSubs.forEach(function (navSub) {
           navSub.onclick = function () {
@@ -42,20 +42,32 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         navLeft.onclick = function () {
-          overlay.classList.add("active-overlay");
-          navBox.classList.add("active");
+          if (navMb.matches(".active") && this.matches(".active")) {
+            navMb.classList.remove("active");
+            this.classList.remove("active");
+          } else {
+            navMb.classList.add("active");
+            this.classList.add("active");
+          }
         };
 
         navRight.onclick = function () {
-          overlay.classList.add("active-overlay");
-          navNew.classList.add("active");
+          if (navMb.matches(".active") && this.matches(".active")) {
+            navMb.classList.remove("active");
+            this.classList.remove("active");
+          } else {
+            navMb.classList.add("active");
+            this.classList.add("active");
+          }
         };
-
         overlay.onclick = function () {
-          if (navBox.matches(".active") || navNew.matches(".active")) {
-            navBox.classList.remove("active");
-            navNew.classList.remove("active");
-            this.classList.remove("active-overlay");
+          if (navMb.matches(".active") && navLeft.matches(".active")) {
+            navMb.classList.remove("active");
+            navLeft.classList.remove("active");
+          }
+          if (navMb.matches(".active") && navRight.matches(".active")) {
+            navMb.classList.remove("active");
+            navRight.classList.remove("active");
           }
         };
       }
