@@ -1,0 +1,91 @@
+.box-detail {
+  & .breadcrumb + .breadcrumb::before {
+    content: "\276F";
+    margin: 0 10px;
+    font-size: 10px;
+  }
+  & .detail-content {
+    & p {
+      font-size: 14px;
+      margin-bottom: 15px;
+      line-height: 20px;
+      color: #666;
+    }
+    & figure figcaption {
+      display: block;
+      padding: 10px;
+      text-align: center;
+      font-family: "arial", sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      color: #0000ff;
+      background-color: #fff;
+      max-width: 100%;
+      line-height: 18px;
+      margin-bottom: 15px;
+    }
+
+    & figure figcaption .expEdit {
+      font-weight: normal;
+      margin: 0;
+    }
+    & figure figcaption em {
+      font-weight: normal;
+      font-style: italic;
+    }
+    & .author {
+      text-align: right;
+      margin-right: 30px;
+      font-weight: bold;
+      font-style: italic;
+      color: #808080;
+    }
+  }
+
+  & .detail-related {
+    margin-bottom: 15px;
+    border-radius: 3px;
+    border-top: 3px solid #007f74;
+    border-bottom: 3px solid #007f74;
+
+    & .box-articles__item {
+      display: flex;
+      padding: 10px 0;
+      border-bottom: 1px dotted #cbcfd3;
+    }
+    & .box-articles__img {
+      width: 20%;
+      flex-shrink: 0;
+    }
+    & .box-articles__content {
+      flex: 1;
+      margin-left: 15px;
+    }
+
+    & .box-articles__title {
+      font-size: 15px;
+      font-weight: bold;
+      line-height: 20px;
+      margin-bottom: 12px;
+    }
+  }
+
+  & .detail-tags {
+    margin: 30px 0;
+    align-items: baseline;
+
+    & .detail-tags__list {
+      flex-wrap: wrap;
+    }
+    & .detail-tags__item {
+      margin: 0 5px 15px 0;
+    }
+
+    & .tag-link {
+      color: #337ab7;
+      background-color: #f5f5f5;
+      border-radius: 4px;
+      padding: 6px;
+    }
+  }
+}

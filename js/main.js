@@ -86,38 +86,12 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     },
 
-    // slide topic list
-    slideToppicList: function () {
-      $(".topic-list").slick({
-        dots: false,
-        infinite: true,
-        autoplay: true,
-        autoplaySpeed: 2000,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        responsive: [
-          {
-            breakpoint: 1024,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-            },
-          },
-          {
-            breakpoint: 600,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-            },
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-            },
-          },
-        ],
+    // slide box top mb
+    slideBoxTopMb: function () {
+      var swiper = new Swiper(".mySwiperBoxTopMb", {
+        pagination: {
+          el: ".swiper-pagination",
+        },
       });
     },
     // sticky bar home 1
@@ -165,8 +139,8 @@ document.addEventListener("DOMContentLoaded", function () {
       this.handleEvent();
       // window scroll
       this.windowScroll();
-      // slide topic list
-      // this.slideToppicList();
+      // slide box top mb
+      this.slideBoxTopMb();
       // sticky bar home 1
       this.stickyHome1();
       // fancybox

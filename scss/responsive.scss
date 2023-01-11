@@ -28,7 +28,52 @@
   .d-lg-grid {
     display: grid;
   }
-  /*-------------------------------------------------------------*/
+  /*-------------------------------------------------------------detail*/
+  .detail-wrapper {
+    padding: 20px;
+    margin-top: 56px;
+    font-family: "Hind", sans-serif;
+
+    & .detail-title {
+      font-size: 25px;
+      font-weight: 700;
+      color: #3daa12;
+    }
+
+    & .detail-sapo {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    & .detail-content p {
+      font-size: 20px;
+      line-height: 30px;
+      text-align: justify;
+    }
+
+    & .detail-related {
+      & .box-articles__img {
+        width: 35%;
+      }
+
+      & .box-articles__title {
+        color: #004370;
+      }
+
+      & .box-articles__public {
+        font-weight: bold;
+      }
+    }
+
+    .author {
+      font-size: 20px;
+    }
+
+    & .box-detail .detail-tags .tag-link {
+      color: #3daa12;
+    }
+  }
 }
 
 // max width 768px

@@ -34,7 +34,42 @@
     display: grid;
   }
 
-  /*-------------------------------------------------------------*/
+  /*-------------------------------------------------------------detail*/
+  .detail-wrapper {
+    padding: 20px;
+    margin-top: 56px;
+    font-family: "Hind", sans-serif;
+  }
+  .detail-wrapper .detail-title {
+    font-size: 25px;
+    font-weight: 700;
+    color: #3daa12;
+  }
+  .detail-wrapper .detail-sapo {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  .detail-wrapper .detail-content p {
+    font-size: 20px;
+    line-height: 30px;
+    text-align: justify;
+  }
+  .detail-wrapper .detail-related .box-articles__img {
+    width: 35%;
+  }
+  .detail-wrapper .detail-related .box-articles__title {
+    color: #004370;
+  }
+  .detail-wrapper .detail-related .box-articles__public {
+    font-weight: bold;
+  }
+  .detail-wrapper .author {
+    font-size: 20px;
+  }
+  .detail-wrapper .box-detail .detail-tags .tag-link {
+    color: #3daa12;
+  }
 }
 @media (max-width: 48em) {
   .d-md-none {
