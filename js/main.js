@@ -122,9 +122,11 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     // sticky bar home 1
     stickyHome1: function () {
-      $(".leftSidebar-1,.rightSidebar-1").theiaStickySidebar({
-        additionalMarginTop: 60,
-      });
+      $(".leftSidebar-1, .centerSidebar-1, .rightSidebar-1").theiaStickySidebar(
+        {
+          additionalMarginTop: 60,
+        }
+      );
     },
     // fancybox
     fancybox: function () {
@@ -164,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // window scroll
       this.windowScroll();
       // slide topic list
-      this.slideToppicList();
+      // this.slideToppicList();
       // sticky bar home 1
       this.stickyHome1();
       // fancybox
