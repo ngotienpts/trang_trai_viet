@@ -10,6 +10,8 @@
       margin-bottom: 15px;
       line-height: 20px;
       color: #666;
+      word-wrap: break-word;
+      word-break: break-word;
     }
     & figure figcaption {
       display: block;

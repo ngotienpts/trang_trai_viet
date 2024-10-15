@@ -1795,6 +1795,8 @@ img {
   margin-bottom: 15px;
   line-height: 20px;
   color: #666;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 .box-detail .detail-content figure figcaption {
   display: block;
