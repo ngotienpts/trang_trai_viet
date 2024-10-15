@@ -20,8 +20,15 @@
     background-color: #fff;
   }
 }
+.icon-clock {
+  width: 12px;
+  height: auto;
+  display: inline-block;
+  flex-shrink: 0;
+}
 .farm-wrapper {
   grid-template-columns: 160px 1fr 300px;
+  margin-left: -160px;
 }
 .box-focus {
   margin-bottom: 36px;
@@ -69,6 +76,13 @@
       z-index: 2;
       text-transform: uppercase;
     }
+
+    .article {
+      display: none;
+      &.active {
+        display: block;
+      }
+    }
   }
 
   & .box-focus__small {
@@ -76,6 +90,7 @@
       padding: 8px 10px;
       transition: all 0.2s;
       border-bottom: 1px solid #f0f0f0;
+      cursor: pointer;
 
       &.active {
         background-color: #74b430;
@@ -353,6 +368,11 @@
   & .article-header {
     border-bottom: 1px solid #999;
     line-height: 1;
+
+    .icon {
+      width: 17px;
+      height: auto;
+    }
 
     & a {
       border-bottom: 1px solid #f00;

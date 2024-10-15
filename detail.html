@@ -33,10 +33,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./lib/swiper/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="./lib/font-awesome/fontawesome-free-5.15.4-web/css/all.min.css" />
   <link rel="stylesheet" href="./lib/fancybox/jquery.fancybox.min.css" />
   <link rel="stylesheet" href="./css/style.css" />
-  <link rel="stylesheet" href="./css/responsive.css" />
   <script src="./lib/jquery/jquery.js"></script>
 </head>
 
@@ -133,8 +131,8 @@
               </ul>
               <div class="navbar-form" role="search">
                 <input type="text" id="txtSearchKeyword" name="txtSearchKeyword" placeholder="Tìm kiếm..." />
-                <button type="submit" id="search-submit">
-                  <i class="fa fa-search"></i>
+                <button type="submit" id="search-submit" class="search-submit-btn">
+                  <img src="./images/svg/search-b.svg" alt="" class="icon">
                 </button>
               </div>
             </div>
@@ -150,14 +148,14 @@
       <div class="nav-mb-wrapper">
         <div class="nav-mb d-2xl-flex align-items-center justify-content-between bg-green-3d px-15 text-white">
           <div class="nav-mb__left fs-20">
-            <i class="fas fa-bars"></i>
+            <img src="./images/svg/bars-w.svg" alt="" class="icon-bar">
             <!-- nav-box -->
             <div class="nav-box-mb fs-15">
               <div class="search-box">
                 <div id="search-form" class="search-form">
                   <input type="text" name="search" id="search" placeholder="Tìm kiếm" autocomplete="off">
-                  <button type="button">
-                    <i class="fas fa-search"></i>
+                  <button type="button" class="search-submit-btn">
+                    <img src="./images/svg/search-gray.svg" alt="" class="icon">
                   </button>
                 </div>
               </div>
@@ -167,7 +165,7 @@
                 <li class="nav-item">
                   <div class="nav-item__heading d-2xl-flex align-items-center justify-content-between">
                     <a href="#">Thời sự</a>
-                    <i class="fas fa-caret-down text-green-3d fs-20"></i>
+                    <img src="./images/svg/sort-down-green.svg" alt="" class="icon-down">
                   </div>
                   <ul class="nav-sub">
                     <li class="nav-sub__item">
@@ -186,7 +184,7 @@
                 <li class="nav-item">
                   <div class="nav-item__heading d-2xl-flex align-items-center justify-content-between">
                     <a href="#">Thời sự</a>
-                    <i class="fas fa-caret-down text-green-3d fs-20"></i>
+                    <img src="./images/svg/sort-down-green.svg" alt="" class="icon-down">
                   </div>
                   <ul class="nav-sub">
                     <li class="nav-sub__item">
@@ -212,7 +210,7 @@
             </a>
           </div>
           <div class="nav-mb__right fs-20">
-            <i class="fas fa-th-large"></i>
+            <img src="./images/svg/extend-w.svg" alt="" class="icon-extend">
             <!-- news top -->
             <div class="newstop-box-mb">
               <div class="newstop-title">
@@ -328,6 +326,7 @@
 
                 <!-- tin liên quan -->
                 <div class="detail-related">
+                    <span class="more-text">Tham khảo thêm</span>
                     <!-- item -->
                     <div class="box-articles__item">
                         <!-- img -->
@@ -472,9 +471,54 @@
                 </div>
                 <!-- end mb -->
 
-                <div class="box-cmt">
-                    <iframe src="https://id.danviet.vn/CommentV2.aspx?objId=20230111123155452&objType=1&objZoneId=340&objUrl=/nguoi-co-uy-tin-o-sa-pa-can-lam-tot-hon-nua-vai-tro-cau-noi-giua-cap-uy-dang-chinh-quyen-dia-phuong-20230111123155452.htm&objTitle=TmclQzYlQjAlRTElQkIlOURpJTIwYyVDMyVCMyUyMHV5JTIwdCVDMyVBRG4lMjAlRTElQkIlOUYlMjBTYSUyMFBhJTIwYyVFMSVCQSVBN24lMjBsJUMzJUEwbSUyMHQlRTElQkIlOTF0JTIwaCVDNiVBMW4lMjBuJUUxJUJCJUFGYSUyMHZhaSUyMHRyJUMzJUIyJTIwYyVFMSVCQSVBN3UlMjBuJUUxJUJCJTkxaSUyMGdpJUUxJUJCJUFGYSUyMGMlRTElQkElQTVwJTIwJUUxJUJCJUE3eSUyMCVDNCU5MSVFMSVCQSVBM25nJTJDJTIwY2glQzMlQURuaCUyMHF1eSVFMSVCQiU4MW4lMjAlQzQlOTElRTElQkIlOEJhJTIwcGglQzYlQjAlQzYlQTFuZw==" style="position: relative; height: 580px; width: 100%; margin-top: 20px;border:none"></iframe>
-                </div>
+                <!-- box cmt -->
+              <div class="box-cmt mt-24">
+            
+                <div id="detail_comment">
+                  <div class="detail__comment notPopUp blNoLogin">
+                        <div class="box-comment ykcb" id="ykcb-form">
+                            <div class="title-comment">
+                                <p class="text">
+                                    <span>Hãy là người đầu tiên bình luận bài viết!</span>
+                                </p>
+                            </div>
+                            <div class="t-content">
+                                <textarea placeholder="Chia sẻ ý kiến của bạn" class="btn-comment" id="txt_bl" name="txt_bl"></textarea>
+                            </div>
+                            <div class="input-info">
+                                <div class="umail">
+                                    <input type="text" id="emailcmthuong" class="" placeholder="Nhập email">
+                                </div>
+                                <div class="uname">
+                                    <input type="text" id="usercmthuong" class="" placeholder="Họ và tên">
+                                </div>
+                                <div>
+                                    <input type="hidden" id="pu-usercmthuong" value="">
+                                </div>
+                                <div>
+                                    <input type="hidden" id="pu-emailcmthuong" value="">
+                                </div>
+                            </div>
+                            <div class="box-bottom">
+                                <a href="javascript:;" id="btn_bl" class="btn-submit">Gửi bình luận</a>
+                            </div>
+                        </div>
+                        <div class="cmbl" >
+                            <div class="filter_coment">
+                                <a href="javascript:;" class="active" rel="2">Quan tâm nhất</a>
+                                <a href="javascript:;" class="" rel="1">Mới nhất</a>
+                            </div>
+                            <div class="list-comment content_cm" data-page-size="5">
+            
+                            </div>
+                            <a href="javascript:;" class="view-more" id="ViewMoreComment" style="display: none">Xem tất cả bình luận</a>
+                        </div>
+                    </div>
+                  </div>
+                <input type="hidden" name="hdNewsId" id="hdNewsId" value="20191017104845478">
+              
+              </div>
+              <!-- end box cmt -->
 
             </div>
           
@@ -497,7 +541,7 @@
               </div>
               <div class="box-articles__content">
                 <p class="box-articles__des fix-text4">Là đất nước sản xuất muối tiềm năng, nhưng mỗi năm Việt Nam vẫn phải nhập khẩu muối để đáp ứng nhu cầu trong nước. Muối nội địa có giá thành cao, chất lượng thấp, rất khó cạnh tranh với muối nhập khẩu nên khó tiêu thụ.</p>
-                <p class="box-articles__public text-gray-66 fs-12 text-italic"><i class="far fa-clock mr-8 text-gray-cc"></i>  09/01/2023 06:27</p>
+                <p class="box-articles__public text-gray-66 fs-12 text-italic"><img src="./images/svg/clock-gray.svg" alt="" class="icon-clock mr-8">  09/01/2023 06:27</p>
               </div>
             </div>
             <h4 class="box-articles__idea mt-10 fs-14 text-green-3d fw-700">Ý kiến nhiều người quan tâm</h4>
@@ -526,14 +570,14 @@
         <div class="footer-top__left">
           <h3 class="footer-heading fs-13 text-gray-66 text-uppercase fw-700">Thông tin liên hệ</h3>
           <div class="">
-            <p class="text"><i class="fas fa-map-marker-alt"></i>Trụ sở: 13 Đường Thụy Khuê, Quận Tây Hồ, Hà Nội</p>
-            <p class="text"><i class="fas fa-map-marker-alt"></i>Tòa soạn và trị sự:: Lô E2, Dương Đình Nghệ, Quận Cầu Giấy, Hà Nội</p>
-            <p class="text"><i class="fas fa-users"></i> Tổng biên tập: Lưu Quang Định.
-              Phó Tổng Biên tập phụ trách: Nguyễn Văn Hoài</p>
-            <p class="text"><i class="fas fa-users"></i>Thư ký tòa soạn: Lê Hân</p>
-            <p class="text"><i class="fas fa-envelope"></i> baoTrangTraiViet@gmail.com</p>
-            <p class="text"><i class="fas fa-phone"></i>043.728.2663 (máy lẻ: 105)</p>
-            <p class="text"><i class="fas fa-rss"></i> RSS</p>
+            <p class="text"><img src="./images/svg/location-gray.svg" alt="" class="icon">Trụ sở: Lô E2, Khu đô thị mới Cầu Giấy, đường Dương Đình Nghệ, Yên Hòa, Cầu Giấy, Hà Nội.</p>
+            <p class="text"><img src="./images/svg/users-gray.svg" alt="" class="icon"> Tổng biên tập: Nguyễn Văn Hoài.</p>
+            <p class="text"><img src="./images/svg/users-gray.svg" alt="" class="icon"> Phó tổng biên tập: Phan Huy Hà (Thường trực), Lưu Phan</p>
+            <p class="text"><img src="./images/svg/users-gray.svg" alt="" class="icon">Thư ký tòa soạn: Lê Hân</p>
+            <p class="text"><img src="./images/svg/email-666.svg" alt="" class="icon"><a href="#" class="link">baoTrangTraiViet@gmail.com</a></p>
+            <p class="text"><img src="./images/svg/phone-flip-gray.svg" alt="" class="icon">043.728.2663 (máy lẻ: 105)</p>
+            <p class="text"><img src="./images/svg/rss-66.svg" alt="" class="icon"><a href="#" class="link">RSS</a></p>
+            
   
             <div class="mt-20 mb-10">
               <a href="https://tinnhiemmang.vn/danh-ba-tin-nhiem/trangtraivietvn-1626259481" title="Chung nhan Tin Nhiem Mang" target="_blank">
@@ -560,7 +604,7 @@
               <!-- content -->
               <div class="box-articles__content">
                 <h3 class="box-articles__title fix-text3"><a href="#">Vực dậy nghề muối, tăng thu nhập cho diêm dân</a></h3>
-                <p class="box-articles__public text-gray-66 fs-12 text-italic"><i class="far fa-clock mr-8 text-gray-cc"></i>  09/01/2023 06:27</p>
+                <p class="box-articles__public text-gray-66 fs-12 text-italic"><img src="./images/svg/clock-gray.svg" alt="" class="icon-clock mr-8">  09/01/2023 06:27</p>
               </div>
               <!-- end content -->
             </div>
@@ -577,7 +621,7 @@
               <!-- content -->
               <div class="box-articles__content">
                 <h3 class="box-articles__title fix-text3"><a href="#">Vực dậy nghề muối, tăng thu nhập cho diêm dân</a></h3>
-                <p class="box-articles__public text-gray-66 fs-12 text-italic"><i class="far fa-clock mr-8 text-gray-cc"></i>  09/01/2023 06:27</p>
+                <p class="box-articles__public text-gray-66 fs-12 text-italic"><img src="./images/svg/clock-gray.svg" alt="" class="icon-clock mr-8">  09/01/2023 06:27</p>
               </div>
               <!-- end content -->
             </div>
@@ -594,7 +638,7 @@
               <!-- content -->
               <div class="box-articles__content">
                 <h3 class="box-articles__title fix-text3"><a href="#">Vực dậy nghề muối, tăng thu nhập cho diêm dân</a></h3>
-                <p class="box-articles__public text-gray-66 fs-12 text-italic"><i class="far fa-clock mr-8 text-gray-cc"></i>  09/01/2023 06:27</p>
+                <p class="box-articles__public text-gray-66 fs-12 text-italic"><img src="./images/svg/clock-gray.svg" alt="" class="icon-clock mr-8">  09/01/2023 06:27</p>
               </div>
               <!-- end content -->
             </div>
@@ -611,7 +655,7 @@
               <!-- content -->
               <div class="box-articles__content">
                 <h3 class="box-articles__title fix-text3"><a href="#">Vực dậy nghề muối, tăng thu nhập cho diêm dân</a></h3>
-                <p class="box-articles__public text-gray-66 fs-12 text-italic"><i class="far fa-clock mr-8 text-gray-cc"></i>  09/01/2023 06:27</p>
+                <p class="box-articles__public text-gray-66 fs-12 text-italic"><img src="./images/svg/clock-gray.svg" alt="" class="icon-clock mr-8">  09/01/2023 06:27</p>
               </div>
               <!-- end content -->
             </div>
@@ -669,9 +713,9 @@
     <div class="footer-mb d-2xl-none d-lg-block">
       <!-- social -->
       <div class="footer-social d-2xl-flex align-items-center justify-content-center mb-20">
-        <a href="#" class="social-item social-fb"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="social-item social-twitter"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="social-item social-gg"><i class="fab fa-google-plus-g"></i></a>
+        <a href="#" class="social-item social-fb"><img src="./images/svg/f-w.svg" alt="" class="icon"></a>
+        <a href="#" class="social-item social-twitter"><img src="./images/svg/twitter-w.svg" alt="" class="icon"></a>
+        <a href="#" class="social-item social-gg"><img src="./images/svg/google-plus-w.svg" alt="" class="icon"></a>
       </div>
       <!-- end social -->
       <div class="footer-text fs-12 text-gray-bb">
@@ -694,15 +738,12 @@
     </div>
     <!-- end mb -->
     <!-- back top -->
-    <div id="back-top"><i class="fas fa-arrow-up text-white"></i></div>
+    <div id="back-top"><img src="./images/svg/arrow-up-w.svg" alt="" class="icon"></div>
     <!-- end back top -->
   </footer>
   <!-- end footer -->
 
   <script src="./lib/swiper/swiper-bundle.min.js"></script>
-  <script src="./lib/font-awesome/fontawesome-free-5.15.4-web/js/fontawesome.min.js"></script>
-  <script src="./js/ResizeSensor.js"></script>
-  <script src="./js/theia-sticky-sidebar.js"></script>
   <script src="./lib/fancybox/jquery.fancybox.min.js"></script>
   <script src="./js/main.js"></script>
 </body>

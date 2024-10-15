@@ -1,3 +1,23 @@
+function throttle(func, limit) {
+  let lastFunc;
+  let lastRan;
+  return function () {
+    const context = this;
+    const args = arguments;
+    if (!lastRan) {
+      func.apply(context, args);
+      lastRan = Date.now();
+    } else {
+      clearTimeout(lastFunc);
+      lastFunc = setTimeout(function () {
+        if ((Date.now() - lastRan) >= limit) {
+          func.apply(context, args);
+          lastRan = Date.now();
+        }
+      }, limit - (Date.now() - lastRan));
+    }
+  };
+}
 document.addEventListener("DOMContentLoaded", function () {
   // back top
   var backTop = document.querySelector("#back-top");
@@ -10,6 +30,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // show sub menu mb
   var navMb = document.querySelector(".nav-mb");
+
+  // change tab
+
+  const tabContainer = document.querySelector('.js__tabContainer')
 
   // end show sub menu mb
 
@@ -30,6 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (navMb) {
         var navSubs = navMb.querySelectorAll(".nav-item__heading");
         var navLeft = navMb.querySelector(".nav-mb__left");
+        var navLeftBar = navMb.querySelector(".nav-mb__left .icon-bar");
         var navRight = navMb.querySelector(".nav-mb__right");
         var overlay = navMb.querySelector(".side-overlay");
         // var navBox = navMb.querySelector(".nav-box-mb");
@@ -41,13 +66,13 @@ document.addEventListener("DOMContentLoaded", function () {
           };
         });
 
-        navLeft.onclick = function () {
-          if (navMb.matches(".active") && this.matches(".active")) {
+        navLeftBar.onclick = function () {
+          if (navMb.matches(".active") && navLeft.matches(".active")) {
             navMb.classList.remove("active");
-            this.classList.remove("active");
+            navLeft.classList.remove("active");
           } else {
             navMb.classList.add("active");
-            this.classList.add("active");
+            navLeft.classList.add("active");
           }
         };
 
@@ -70,6 +95,25 @@ document.addEventListener("DOMContentLoaded", function () {
             navRight.classList.remove("active");
           }
         };
+      }
+
+      // change tab
+
+      if(tabContainer){
+        var tabs = tabContainer.querySelectorAll('.js__tabItem')
+        var panes = tabContainer.querySelectorAll('.js__paneItem')
+
+        tabs.forEach((tab,index)=>{
+          var pane = panes[index]
+
+          tab.onclick = function() {
+            document.querySelector('.js__tabItem.active ').classList.remove('active')
+            document.querySelector('.js__paneItem.active ').classList.remove('active')
+
+            this.classList.add('active')
+            pane.classList.add('active')
+          }
+        })
       }
 
       // hide cac element khi click ra ngoai
@@ -128,21 +172,18 @@ document.addEventListener("DOMContentLoaded", function () {
     // window scroll
     windowScroll: function () {
       var _this = this;
-      window.onscroll = function () {
-        // scroll top
-        _this.scrollFunc();
-      };
+      _this.scrollFunc();
     },
     // khoi tao function start
     start: function () {
       // su ly cac su kien
       this.handleEvent();
       // window scroll
-      this.windowScroll();
+      window.addEventListener('scroll', throttle(this.windowScroll.bind(this),300));
       // slide box top mb
       this.slideBoxTopMb();
       // sticky bar home 1
-      this.stickyHome1();
+      // this.stickyHome1();
       // fancybox
       this.fancybox();
     },

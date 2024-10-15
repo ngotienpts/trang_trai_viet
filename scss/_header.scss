@@ -109,14 +109,14 @@
       padding-right: 30px;
 
       &:after {
-        content: "\f078";
+        content: "❯";
         position: absolute;
-        font-family: "Font Awesome 5 Free";
         font-weight: 900;
-        font-size: 13px;
+        font-size: 11px;
         color: #fff;
-        top: 21px;
+        top: 20px;
         right: 13px;
+        transform: rotate(90deg);
       }
     }
 
@@ -207,7 +207,7 @@
   width: 200px;
   margin: 0 !important;
 }
-.navbar-form button {
+.navbar-form .search-submit-btn {
   background: transparent;
   border: none;
   position: absolute;
@@ -216,6 +216,10 @@
   padding: 0;
   font-size: 13px;
   color: #666;
+}
+.navbar-form .search-submit-btn .icon {
+  width: 16px;
+  height: auto;
 }
 /*===== mobile =====*/
 .nav-mb {
@@ -251,6 +255,20 @@
 }
 .nav-mb__left.active .nav-box-mb {
   left: 0;
+}
+.nav-mb {
+  &__left {
+    .icon-bar {
+      width: 20px;
+      height: auto;
+    }
+  }
+  &__right {
+    .icon-extend {
+      width: 20px;
+      height: auto;
+    }
+  }
 }
 .nav-box-mb {
   position: fixed;
@@ -289,7 +307,7 @@
     padding: 5px 20px;
     font-size: 15px;
   }
-  & button {
+  & .search-submit-btn {
     color: #999;
     display: inline-block;
     background: transparent;
@@ -298,9 +316,19 @@
     top: 5px;
     left: 10px;
     padding: 0;
+
+    .icon {
+      width: 16px;
+      height: auto;
+    }
   }
   & .nav-item {
     padding: 0 20px;
+
+    .icon-down {
+      width: 12px;
+      height: auto;
+    }
   }
   & .nav-item a {
     display: block;

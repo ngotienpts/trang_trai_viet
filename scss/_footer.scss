@@ -23,6 +23,10 @@
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
 }
+#back-top .icon {
+  width: 16px;
+  height: auto;
+}
 .footer {
   background: #c3c3c3;
   padding-top: 62px;
@@ -30,6 +34,21 @@
 .footer-top {
   border-bottom: 1px solid #333;
   padding-bottom: 20px;
+
+  &__left {
+    img.icon {
+      width: auto;
+      height: 13px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 4px;
+      flex-shrink: 0;
+    }
+
+    .link {
+      color: #337ab7;
+    }
+  }
   & .footer-heading {
     padding-bottom: 25px;
     margin-bottom: 25px;
@@ -110,8 +129,14 @@
       border-radius: 50%;
       margin: 0 5px;
 
+      .icon {
+        height: 15px;
+        width: auto;
+      }
+
       &.social-fb {
         background-color: #3b5998;
+
       }
       &.social-twitter {
         background-color: #55acee;
