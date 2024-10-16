@@ -22,12 +22,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // back top
   var backTop = document.querySelector("#back-top");
 
-  // width document
-  var widthDoc = document.querySelector("body");
-
-  // fancybox
-  var fancyboxes = document.querySelectorAll(".fancybox-full");
-
   // show sub menu mb
   var navMb = document.querySelector(".nav-mb");
 
@@ -116,18 +110,6 @@ document.addEventListener("DOMContentLoaded", function () {
         })
       }
 
-      // hide cac element khi click ra ngoai
-      document.addEventListener("click", function (e) {
-        // if (menuPc && btnMenu) {
-        //   if (
-        //     !menuPc.querySelector(".wrapper").contains(e.target) &&
-        //     !e.target.matches(".icon-expandmenu")
-        //   ) {
-        //     menuPc.classList.remove("active");
-        //     btnMenu.classList.remove("active");
-        //   }
-        // }
-      });
     },
 
     // slide box top mb
@@ -138,22 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
       });
     },
-    // sticky bar home 1
-    stickyHome1: function () {
-      $(".leftSidebar-1, .centerSidebar-1, .rightSidebar-1").theiaStickySidebar(
-        {
-          additionalMarginTop: 60,
-        }
-      );
-    },
-    // fancybox
-    fancybox: function () {
-      if (fancyboxes) {
-        fancyboxes.forEach(function (fancybox) {
-          $(".fancybox-full a").fancybox();
-        });
-      }
-    },
+
     // scroll top
     scrollFunc: function () {
       if (backTop) {
@@ -183,9 +150,6 @@ document.addEventListener("DOMContentLoaded", function () {
       // slide box top mb
       this.slideBoxTopMb();
       // sticky bar home 1
-      // this.stickyHome1();
-      // fancybox
-      this.fancybox();
     },
   };
 
